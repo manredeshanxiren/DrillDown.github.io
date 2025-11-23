@@ -45,3 +45,7 @@ collections:
     output: true
     permalink: /notes/:title/
     title: 技术笔记
+
+# notes列表页面
+notes:
+  permalink: /notes/

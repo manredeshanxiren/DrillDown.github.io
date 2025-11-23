@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 技术笔记列表
+permalink: /notes/
 ---
 
 # 技术笔记列表
