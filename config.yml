@@ -1,7 +1,7 @@
 title: 我的技术笔记博客
 description: 一个用于托管技术笔记的静态博客
-baseurl: ""
-url: "https://yourusername.github.io"
+baseurl: "/DrillDown.github.io"
+url: "https://manredeshanxiren.github.io"
 
 # 构建设置
 markdown: kramdown
@@ -24,10 +24,10 @@ exclude:
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: "pages"
     values:
       layout: "default"
-      author: "Your Name"
+      author: "manredeshanxiren"
 
 # 布局目录
 layout_dir: layouts
@@ -37,10 +37,11 @@ data_dir: data
 
 # 包含目录
 include:
-  - notes
+  - _notes
 
 # 分类
 collections:
   notes:
     output: true
     permalink: /notes/:title/
+    title: 技术笔记

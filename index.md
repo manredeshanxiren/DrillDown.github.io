@@ -23,9 +23,13 @@ title: 欢迎来到我的技术笔记博客
 
 ## 最新笔记
 
+{% if site.notes %}
 {% assign latest_notes = site.notes | sort: 'date' | reverse %}
 {% for note in latest_notes limit:5 %}
 - [{{ note.title }}]({{ note.url }}) - {{ note.date | date: "%Y年%m月%d日" }}
 {% endfor %}
+{% else %}
+- 暂无笔记，请添加您的第一篇技术笔记！
+{% endif %}
 
 [查看所有笔记 →](/notes)
