@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: note
 title: Jekyll博客搭建指南
 date: 2024-11-23
 author: manredeshanxiren
