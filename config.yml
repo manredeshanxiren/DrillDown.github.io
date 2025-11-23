@@ -1,6 +1,6 @@
-title: 我的技术笔记博客
-description: 一个用于托管技术笔记的静态博客
-baseurl: "/DrillDown.github.io"
+title: 技术笔记博客
+description: 技术笔记分享
+baseurl: ""
 url: "https://manredeshanxiren.github.io"
 
 # 构建设置
