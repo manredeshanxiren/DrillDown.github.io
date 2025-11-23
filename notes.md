@@ -7,6 +7,7 @@ title: 技术笔记列表
 
 这里是我所有的技术笔记，按时间倒序排列。
 
+{% if site.notes %}
 {% assign sorted_notes = site.notes | sort: 'date' | reverse %}
 
 {% for note in sorted_notes %}
@@ -31,6 +32,9 @@ title: 技术笔记列表
 </div>
 <hr>
 {% endfor %}
+{% else %}
+<p>暂无技术笔记，请添加您的第一篇技术笔记！</p>
+{% endif %}
 
 <style>
 .note-item {

@@ -37,7 +37,7 @@ data_dir: data
 
 # 包含目录
 include:
-  - _notes
+  - .github
 
 # 分类
 collections:
