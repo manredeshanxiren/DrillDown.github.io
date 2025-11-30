@@ -2,31 +2,32 @@
 layout: default
 ---
 
-<article class="note">
-    <header class="note-header">
-        <h1 class="note-title">{{ page.title }}</h1>
-        <div class="note-meta">
+<article class="note-content">
+    <header>
+        <h1 style="margin-top: 0;">{{ page.title }}</h1>
+        <div style="color: var(--text-muted); margin-bottom: 2rem;">
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%m月%d日" }}</time>
             {% if page.author %}
-                <span class="note-author">作者: {{ page.author }}</span>
+            <span> · {{ page.author }}</span>
             {% endif %}
         </div>
     </header>
 
-    <div class="note-content">
+    <div class="note-body">
         {{ content }}
     </div>
 
-    <footer class="note-footer">
-        <div class="note-tags">
-            {% if page.tags %}
-                <strong>标签:</strong>
-                {% for tag in page.tags %}
-                    <a href="{{ '/tags' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
-                {% endfor %}
-            {% endif %}
+    <footer style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+        {% if page.tags %}
+        <div class="note-tags" style="margin-bottom: 1rem;">
+            {% for tag in page.tags %}
+            <a href="{{ '/tags' | relative_url }}#{{ tag | slugify }}"
+                style="background: #f1f5f9; padding: 4px 8px; border-radius: 4px; font-size: 0.9em; color: var(--text-muted); margin-right: 8px;">#{{
+                tag }}</a>
+            {% endfor %}
         </div>
-        
+        {% endif %}
+
         <div class="note-navigation">
             <a href="{{ '/notes' | relative_url }}">← 返回笔记列表</a>
         </div>

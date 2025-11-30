@@ -4,88 +4,34 @@ title: 技术笔记列表
 permalink: /notes/
 ---
 
-# 技术笔记列表
-
-这里是我所有的技术笔记，按时间倒序排列。
+<div class="hero-section" style="padding: 40px 0; text-align: left;">
+    <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">所有笔记</h1>
+    <p class="hero-subtitle" style="margin: 0; font-size: 1.1rem;">按时间倒序排列的技术积累。</p>
+</div>
 
 {% if site.notes %}
-{% assign sorted_notes = site.notes | sort: 'date' | reverse %}
-
-{% for note in sorted_notes %}
-<div class="note-item">
-    <h2><a href="{{ note.url }}">{{ note.title }}</a></h2>
-    <div class="note-meta">
-        <time datetime="{{ note.date | date_to_xmlschema }}">{{ note.date | date: "%Y年%m月%d日" }}</time>
-        {% if note.author %}
-            <span class="note-author">作者: {{ note.author }}</span>
-        {% endif %}
-        {% if note.tags %}
-            <div class="note-tags">
+    {% assign sorted_notes = site.notes | sort: 'date' | reverse %}
+    <div class="grid-2">
+    {% for note in sorted_notes %}
+        <article class="note-card">
+            <div class="note-card-date">{{ note.date | date: "%Y-%m-%d" }}</div>
+            <h3 class="note-card-title">{{ note.title }}</h3>
+            <p class="note-card-excerpt">{{ note.excerpt | strip_html | truncate: 100 }}</p>
+            
+            {% if note.tags %}
+            <div style="margin-bottom: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
                 {% for tag in note.tags %}
-                    <span class="tag">{{ tag }}</span>
+                    <span style="background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; color: var(--text-muted);">#{{ tag }}</span>
                 {% endfor %}
             </div>
-        {% endif %}
+            {% endif %}
+            
+            <a href="{{ note.url }}" class="note-card-link">阅读全文</a>
+        </article>
+    {% endfor %}
     </div>
-    {% if note.excerpt %}
-        <p class="note-excerpt">{{ note.excerpt }}</p>
-    {% endif %}
-</div>
-<hr>
-{% endfor %}
 {% else %}
-<p>暂无技术笔记，请添加您的第一篇技术笔记！</p>
+    <div style="text-align: center; padding: 40px; color: var(--text-muted);">
+        <p>暂无技术笔记，请添加您的第一篇技术笔记！</p>
+    </div>
 {% endif %}
-
-<style>
-.note-item {
-    margin-bottom: 2rem;
-}
-
-.note-item h2 {
-    margin-bottom: 0.5rem;
-}
-
-.note-item h2 a {
-    text-decoration: none;
-    color: #333;
-}
-
-.note-item h2 a:hover {
-    color: #007bff;
-}
-
-.note-meta {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.note-author {
-    margin-left: 1rem;
-}
-
-.note-tags {
-    margin-top: 0.5rem;
-}
-
-.tag {
-    background-color: #e9ecef;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    margin-right: 0.5rem;
-    font-size: 0.8rem;
-    color: #666;
-}
-
-.note-excerpt {
-    color: #666;
-    font-style: italic;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid #e9ecef;
-    margin: 2rem 0;
-}
-</style>

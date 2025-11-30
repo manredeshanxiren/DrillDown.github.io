@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
 </head>
 <body>
     <header class="site-header">
-        <div class="wrapper">
-            <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <div class="wrapper header-wrapper">
+            <a class="site-title" href="{{ '/' | relative_url }}">
+                <span class="logo-icon">⚡</span> {{ site.title }}
+            </a>
             <nav class="site-nav">
-                <a href="{{ '/' | relative_url }}">首页</a>
-                <a href="{{ '/notes' | relative_url }}">笔记</a>
-                <a href="{{ '/about' | relative_url }}">关于</a>
+                <a href="{{ '/' | relative_url }}" class="nav-link">首页</a>
+                <a href="{{ '/notes' | relative_url }}" class="nav-link">笔记</a>
+                <a href="{{ '/about' | relative_url }}" class="nav-link">关于</a>
             </nav>
         </div>
     </header>
@@ -27,7 +32,7 @@
 
     <footer class="site-footer">
         <div class="wrapper">
-            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. 由 Jekyll 驱动.</p>
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. Designed with <span style="color: #e25555;">&hearts;</span></p>
         </div>
     </footer>
 </body>

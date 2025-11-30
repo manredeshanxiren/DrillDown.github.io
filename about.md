@@ -3,6 +3,8 @@ layout: default
 title: 关于
 ---
 
+<div class="note-content">
+
 # 关于这个博客
 
 这是一个基于 Jekyll 构建的静态技术笔记博客，专门用于记录和分享技术学习过程中的心得体会。
@@ -77,3 +79,5 @@ bundle exec jekyll serve
 ## 许可证
 
 本博客内容采用 [知识共享署名 4.0 国际许可协议](http://creativecommons.org/licenses/by/4.0/) 进行许可。
+
+</div>
